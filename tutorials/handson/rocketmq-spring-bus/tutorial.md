@@ -1,6 +1,15 @@
 # spring-RocketMQ-bus
 
-## bus[消息总线介绍]
+## 实验介绍
+本实验，你将使用基于RocketMQ的spring-cloud-bus，实现基于spring-cloud集群内的远程事件广播通知。
+
+通过本实验，你将学习：
+* 创建并发送远程事件
+* 接收远程事件
+* 处理远程事件的ACK回调
+
+
+### bus[消息总线介绍]
 配置了同一个消息总线的服务，其中任意一个发送一个事件消息。如果其他也监听了该事件，都可以收到该事件消息。
 下图简单的演示了当配置发现修改的时候，如果通知集群同步更新配置。serviceA-3接受通知页面更新了配置，马上发送配置修改的事件消息到bus里面。serviceA-1,serciceA-2注册了修改配置事件，收到修改配置事件。重新拉取配置。
 
@@ -12,20 +21,33 @@
 ## 演示官方dome
 
 ### 编译与启动
-```shell
-
+```bash
+# 克隆项目
 git clone https://github.com/alibaba/spring-cloud-alibaba.git
 
+# 进入项目
 cd spring-cloud-alibaba
 
+# 编译项目
 mvn install -Dmaven.test.skip=true
 
-cd ..
+# 进入target目录
+cd ./spring-cloud-alibaba-examples/spring-cloud-bus-rocketmq-example/target/
 
-cp ./spring-cloud-alibaba/spring-cloud-alibaba-examples/spring-cloud-bus-rocketmq-example/target/spring-cloud-bus-rocketmq-example-2.2.5.RC2.jar ./
+# 得到后缀为original的文件
+jar_original=`ls *.original`
 
+# 得到可执行jar名
+jar_path="./"${jar_original%.original}
 
-nohup  java -jar spring-cloud-bus-rocketmq-example-2.2.5.RC2.jar &
+# 把可以执行jar 复制到当前用户目录
+cp $jar_path ~/
+
+# 回到用户名录
+cd  ~/
+
+# 启动jar
+nohup  java -jar $jar_path &
 
 ```
 ### 测试
@@ -197,6 +219,6 @@ public class EventHandler{
 ```
 
 
-#### 本地测试
-##### RocketMQBusApplication
+#### 源码及本地测试
+> 请直接打开RocketMQBusApplication.java。并且执行RocketMQBusApplication的main方法
 
