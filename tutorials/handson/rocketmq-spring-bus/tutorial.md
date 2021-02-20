@@ -22,31 +22,23 @@
 
 ### 编译与启动
 ```bash
-# 克隆项目
+
 git clone https://github.com/alibaba/spring-cloud-alibaba.git
 
-# 进入项目
 cd spring-cloud-alibaba
 
-# 编译项目
 mvn install -Dmaven.test.skip=true
 
-# 进入target目录
 cd ./spring-cloud-alibaba-examples/spring-cloud-bus-rocketmq-example/target/
 
-# 得到后缀为original的文件
 jar_original=`ls *.original`
 
-# 得到可执行jar名
 jar_path="./"${jar_original%.original}
 
-# 把可以执行jar 复制到当前用户目录
 cp $jar_path ~/
 
-# 回到用户名录
 cd  ~/
 
-# 启动jar
 nohup  java -jar $jar_path &
 
 ```
