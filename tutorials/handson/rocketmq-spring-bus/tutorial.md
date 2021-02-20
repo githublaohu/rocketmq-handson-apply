@@ -8,14 +8,53 @@
 ![1202638-20180521203126866-1299643942.png](https://cdn.nlark.com/yuque/0/2021/png/1509048/1613234725918-604aa261-8ea7-4a62-baff-43db475a379f.png#align=left&display=inline&height=580&margin=%5Bobject%20Object%5D&name=1202638-20180521203126866-1299643942.png&originHeight=580&originWidth=968&size=70094&status=done&style=none&width=968)
 
 
-## 安装java开发环境
+
+## 演示官方dome
+
+### 编译与启动
+```shell
+
+https://github.com/alibaba/spring-cloud-alibaba.git
+
+mvn install -Dmaven.test.skip=true
+
+cp ./spring-cloud-alibaba/spring-cloud-alibaba-examples/spring-cloud-bus-rocketmq-example/target/spring-cloud-bus-rocketmq-example-2.2.5.RC2.jar ./
+
+cp ./spring-cloud-alibaba/spring-cloud-alibaba-examples/spring-cloud-bus-rocketmq-example/src/main/resources/bootstrap.properties  ./
+
+nohup  java -jar spring-cloud-bus-rocketmq-example-2.2.5.RC2.jar &
+
+```
+### 测试
+
+#### 测试一
+```shell
+
+# 发送请求
+wget 127.0.0.1:8888/bus/event/publish/user?name=RocketMQ2
+
+#查看日志打印
+tail -f -n 200 logs/rocketmqlogs/rocketmq_client.log 
+
+# 广播信息的打印
+Server [port : 8888] listeners on User{id=1613788852664, name='RocketMQ2'}
+# ack回调信息
+Server [port : 8888] listeners on {"type":"AckRemoteApplicationEvent","timestamp":1613788852845,"originService":"spring-cloud-bus-rocketmq-example:8888","destinationService":"**","id":"1f0901e2-fa50-483a-ac4c-d3b79f1bd5b3","ackId":"3fde7964-21bd-4c68-a942-8d9b1b678be5","ackDestinationService":"**","event":"com.alibaba.cloud.examples.rocketmq.UserRemoteApplicationEvent"}
+```
 
 
-## 安装RocketMQ
+#### 测试二
+```shell
+# 发送请求
+wget 127.0.0.1:8888/bus/event/publish/user?name=RocketMQ&destination=bus
+#查看日志打印
+tail -f -n 200 logs/rocketmqlogs/rocketmq_client.log 
 
+# 广播信息的打印
+Server [port : 8888] listeners on User{id=1613788060560, name='RocketMQ'}
 
-## 下载官方dome
-
+```
+> 第二次测试没有触发回调，原因是传递destination参数。至于为什么没有触发这里不详细说明。有兴趣的请看org.springframework.cloud.bus.ServiceMatcher.isForSelf方法与AntPathMatcher类
 
 ## 实现流程
 #### maven配置
