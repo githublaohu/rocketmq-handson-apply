@@ -14,13 +14,16 @@
 ### 编译与启动
 ```shell
 
-https://github.com/alibaba/spring-cloud-alibaba.git
+git clone https://github.com/alibaba/spring-cloud-alibaba.git
+
+cd spring-cloud-alibaba
 
 mvn install -Dmaven.test.skip=true
 
+cd ..
+
 cp ./spring-cloud-alibaba/spring-cloud-alibaba-examples/spring-cloud-bus-rocketmq-example/target/spring-cloud-bus-rocketmq-example-2.2.5.RC2.jar ./
 
-cp ./spring-cloud-alibaba/spring-cloud-alibaba-examples/spring-cloud-bus-rocketmq-example/src/main/resources/bootstrap.properties  ./
 
 nohup  java -jar spring-cloud-bus-rocketmq-example-2.2.5.RC2.jar &
 
@@ -34,7 +37,7 @@ nohup  java -jar spring-cloud-bus-rocketmq-example-2.2.5.RC2.jar &
 wget 127.0.0.1:8888/bus/event/publish/user?name=RocketMQ2
 
 #查看日志打印
-tail -f -n 200 logs/rocketmqlogs/rocketmq_client.log 
+tail -f -n 200 nohup.out
 
 # 广播信息的打印
 Server [port : 8888] listeners on User{id=1613788852664, name='RocketMQ2'}
@@ -48,7 +51,7 @@ Server [port : 8888] listeners on {"type":"AckRemoteApplicationEvent","timestamp
 # 发送请求
 wget 127.0.0.1:8888/bus/event/publish/user?name=RocketMQ&destination=bus
 #查看日志打印
-tail -f -n 200 logs/rocketmqlogs/rocketmq_client.log 
+tail -f -n 200 nohup.out
 
 # 广播信息的打印
 Server [port : 8888] listeners on User{id=1613788060560, name='RocketMQ'}
