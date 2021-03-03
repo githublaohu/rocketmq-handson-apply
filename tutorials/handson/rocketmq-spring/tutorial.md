@@ -3,6 +3,28 @@
 
 ### 编译与启动
 
+```bash
+
+git clonehttps://github.com/githublaohu/rocketmq-handson-apply.git
+
+cd rocketmq-handson-apply/rocketmq-spring
+
+mvn install -Dmaven.test.skip=true
+
+cd ./target/
+
+jar_original=`ls *.original`
+
+jar_path="./"${jar_original%.original}
+
+cp $jar_path ../
+
+cd  ../
+
+nohup  java -jar $jar_path   &
+
+```
+
 
 ### 消息类型测试
 
@@ -210,7 +232,7 @@ public class MessageSendController {
 
 ##### 默认配置与ExtRocketMQTemplateConfiguration注解解读
 | 配置名 | 作用 | 类型 | 默认值 | 是否必须 | 存在配置文件 | 默认配置名 |存在注解 | 说明 |
-| -- | -- | -- | -- | -- | -- | -- | -- | -- |  -- | 
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | 
 |  nameServer   | 注册服务地址    |  String    |     |   是  |  是   | rocketmq.name-server |  是   |
 |  group    |  生产组 | String |  | 是  | 是  | rocketmq.producer.group | 是  |  在同一个进程中不能创建相同组的生产者  |
 | sendMessageTimeout  | 发送超时  | int   | 3000  |  否 | 是 |  rocketmq.producer.send-message-timeout  | 是 |   |  |   |
