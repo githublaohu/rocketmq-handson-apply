@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>handson-apply</groupId>
 	<artifactId>rocketmq</artifactId>
-	<version>1</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<properties>
