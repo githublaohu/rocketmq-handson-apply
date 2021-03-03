@@ -5,13 +5,13 @@
 
 ```bash
 
-git clonehttps://github.com/githublaohu/rocketmq-handson-apply.git
+git clone https://github.com/githublaohu/rocketmq-handson-apply.git
 
-cd rocketmq-handson-apply/rocketmq-spring
+cd rocketmq-handson-apply
 
 mvn install -Dmaven.test.skip=true
 
-cd ./target/
+cd ./rocketmq-spring/target/
 
 jar_original=`ls *.original`
 
