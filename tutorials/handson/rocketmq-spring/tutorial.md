@@ -17,9 +17,9 @@ jar_original=`ls *.original`
 
 jar_path="./"${jar_original%.original}
 
-cp $jar_path ../
+cp $jar_path ~/
 
-cd  ../
+cd  ~/
 
 nohup  java -jar $jar_path   &
 

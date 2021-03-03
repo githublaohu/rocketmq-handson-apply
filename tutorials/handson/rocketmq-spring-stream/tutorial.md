@@ -14,13 +14,13 @@
 ### 编译与启动
 ```bash
 
-git clone https://github.com/alibaba/spring-cloud-alibaba.git
+git clonehttps://github.com/githublaohu/rocketmq-handson-apply.git
 
-cd spring-cloud-alibaba
+cd rocketmq-handson-apply/rocketmq-spring-cloud-stream
 
 mvn install -Dmaven.test.skip=true
 
-cd ./spring-cloud-alibaba-examples/rocketmq-example/rocketmq-consume-example/target/
+cd ./target/
 
 jar_original=`ls *.original`
 
