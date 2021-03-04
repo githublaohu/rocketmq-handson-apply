@@ -21,6 +21,8 @@ cp $jar_path ~/
 
 cd  ~/
 
+export local=$RANDOM
+
 nohup  java -jar $jar_path   &
 
 ```

@@ -14,7 +14,7 @@
 ### 编译与启动
 ```bash
 
-git clonehttps://github.com/githublaohu/rocketmq-handson-apply.git
+git clone https://github.com/githublaohu/rocketmq-handson-apply.git
 
 cd rocketmq-handson-apply/rocketmq-spring-cloud-stream
 
@@ -29,6 +29,8 @@ jar_path="./"${jar_original%.original}
 cp $jar_path ~/
 
 cd  ~/
+
+export local=$RANDOM
 
 nohup  java -jar $jar_path   &
 
