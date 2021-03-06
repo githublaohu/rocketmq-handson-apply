@@ -33,7 +33,7 @@ nohup  java -jar $jar_path   &
 
 #### 发送对象
 ```shell
-http://127.0.0.1:28082/messageSend/sendObject?id=1&name=xiaoming&action=go2&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/sendObject?id=1&name=xiaoming&action=go2&ags=3"
 
 tail -f -n 200 nohup.out
 
@@ -43,7 +43,7 @@ consumer name is SendDataTypeConsumer data is UserInfo [id=1, name=xiaoming, act
 
 #### 发动message
 ```shell
-http://127.0.0.1:28082/messageSend/sendMessage?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/sendMessage?id=2&name=xiaoming&action=des&ags=3"
 
 tail -f -n 200 nohup.out
 
@@ -52,7 +52,7 @@ consumer name is SendDataTypeConsumer data is UserInfo [id=2, name=xiaoming, act
 
 #### 发送convert
 ```shell
-http://127.0.0.1:28082/messageSend/sendConvertData?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/sendConvertData?id=2&name=xiaoming&action=des&ags=3"
 
 tail -f -n 200 nohup.out
 
@@ -62,7 +62,7 @@ consumer name is SendDataTypeConsumer data is UserInfo [id=2, name=xiaoming, act
 #### 发送List
 ```shell
 
-http://127.0.0.1:28082/messageSend/sendCollection?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/sendCollection?id=2&name=xiaoming&action=des&ags=3"
 
 tail -f -n 200 nohup.out
 
@@ -78,7 +78,7 @@ consumer name is SendDataTypeConsumer data is UserInfo [id=5, name=xiaoming, act
 #### 同步发送
 ```shell
 
-http://127.0.0.1:28082/messageSend/syncSend?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/syncSend?id=2&name=xiaoming&action=des&ags=3"
 
 consumer name is SendOperationTypeConsumer data is UserInfo [id=2, name=xiaoming, action=des, operation=syncSend]
 ```
@@ -86,7 +86,7 @@ consumer name is SendOperationTypeConsumer data is UserInfo [id=2, name=xiaoming
 #### 异步发送
 ```shell
 
-http://127.0.0.1:28082/messageSend/asyncSend?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/asyncSend?id=2&name=xiaoming&action=des&ags=3"
 
 tail -f -n 200 nohup.out
 
@@ -101,7 +101,7 @@ consumer name is SendOperationTypeConsumer data is UserInfo [id=2, name=xiaoming
 
 ```shell
 
-http://127.0.0.1:28082/messageSend/oneWaySend?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/oneWaySend?id=2&name=xiaoming&action=des&ags=3"
 
 tail -f -n 200 nohup.out
 
@@ -113,13 +113,13 @@ consumer name is SendOperationTypeConsumer data is UserInfo [id=2, name=xiaoming
 
 ```shell
 
-http://127.0.0.1:28082/messageSend/transactionMessage?id=2&name=xiaoming&action=des&ags=1
+wget -q -O- "http://127.0.0.1:28082/messageSend/transactionMessage?id=2&name=xiaoming&action=des&ags=1"
 
 
-http://127.0.0.1:28082/messageSend/transactionMessage?id=2&name=xiaoming&action=des&ags=2
+wget -q -O- "http://127.0.0.1:28082/messageSend/transactionMessage?id=2&name=xiaoming&action=des&ags=2"
 
 
-http://127.0.0.1:28082/messageSend/transactionMessage?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/transactionMessage?id=2&name=xiaoming&action=des&ags=3"
 
 
 
@@ -128,7 +128,7 @@ http://127.0.0.1:28082/messageSend/transactionMessage?id=2&name=xiaoming&action=
 #### 发送同步RPC消息
 ```shell
 
-http://127.0.0.1:28082/messageSend/sendAndReceive?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/sendAndReceive?id=2&name=xiaoming&action=des&ags=3"
 
 # 返回
 {"userInfoId":"2","operation":"sendAndReceive","operationTime":1614535559266}
@@ -142,7 +142,7 @@ consumer name is ReceiveConsumer data is UserInfo [id=2, name=xiaoming, action=d
 #### 发送同步PRC消息结果为泛型
 ```shell
 
-http://127.0.0.1:28082/messageSend/sendAndReceiveToGeneric?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/sendAndReceiveToGeneric?id=2&name=xiaoming&action=des&ags=3"
 
 tail -f -n 200 nohup.out
 
@@ -151,13 +151,13 @@ consumer name is ReceiveGenericConsumer data is UserInfo [id=2, name=xiaoming, a
 {"code":200,"message":"success","data":{"userInfoId":"2","operation":"sendAndReceiveToGeneric","operationTime":1614536048349}}
 
 
-````
+```
 
 #### 发送异步RPC消息
 
 ```shell
 
-http://127.0.0.1:28082/messageSend/sendAndReceiveToAsync?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/sendAndReceiveToAsync?id=2&name=xiaoming&action=des&ags=3"
 
 tail -f -n 200 nohup.out
 
@@ -170,7 +170,7 @@ producer  topic is sendAndReceive tag is generic message is ResultObject [code=2
 #### 顺序发送
 ```shell
 
-http://127.0.0.1:28082/messageSend/syncSendOrderly?id=2&name=xiaoming&action=des&ags=3
+wget -q -O- "http://127.0.0.1:28082/messageSend/syncSendOrderly?id=2&name=xiaoming&action=des&ags=3"
 
 tail -f -n 200 nohup.out
 
