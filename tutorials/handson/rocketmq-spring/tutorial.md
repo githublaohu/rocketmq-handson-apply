@@ -4,6 +4,7 @@
 ### 编译与启动
 
 ```bash
+pkill -9 java
 
 git clone https://github.com/githublaohu/rocketmq-handson-apply.git
 

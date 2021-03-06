@@ -19,8 +19,6 @@ package com.handson.rocketmq.spring.cloud.stream;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.core.env.ConfigurableEnvironment;
 
 import com.handson.rocketmq.spring.cloud.stream.consumer.StreanBindingConsumer;
 import com.handson.rocketmq.spring.cloud.stream.producer.StreanBindingProducer;
@@ -31,7 +29,7 @@ import com.handson.rocketmq.spring.cloud.stream.producer.StreanBindingProducer;
 public class RocketMQApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RocketMQApplication.class, args);
+			SpringApplication.run(RocketMQApplication.class, args);
 	}
 
 }

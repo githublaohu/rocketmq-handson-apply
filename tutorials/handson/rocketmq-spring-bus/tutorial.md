@@ -27,6 +27,8 @@ Spring Cloud Bus 是用来将分布式系统的节点与轻量级消息系统链
 ### 编译与启动
 ```bash
 
+pkill -9 java
+
 git clone https://github.com/alibaba/spring-cloud-alibaba.git
 
 cd spring-cloud-alibaba

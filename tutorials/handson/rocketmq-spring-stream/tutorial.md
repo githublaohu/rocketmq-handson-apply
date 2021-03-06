@@ -14,6 +14,8 @@
 ### 编译与启动
 ```bash
 
+pkill -9 java
+
 git clone https://github.com/githublaohu/rocketmq-handson-apply.git
 
 cd rocketmq-handson-apply/rocketmq-spring-cloud-stream
@@ -38,7 +40,7 @@ nohup  java -jar $jar_path   &
 
 ### 测试同步消息
 ```shell
-http://127.0.0.1:28082/messageSend/sendSync?id=1&name=xiaoming&action=go
+wget -q -O- "127.0.0.1:28082/messageSend/sendSync?id=1&name=xiaoming&action=go"
 
 tail -f -n 200 nohup.out
 
@@ -47,7 +49,8 @@ tail -f -n 200 nohup.out
 
 ### 测试异步消息
 ```shell
-http://127.0.0.1:28082/messageSend/sendAsync?id=2&name=xiaohua&action=to
+
+wget -q -O- "127.0.0.1:28082/messageSend/sendAsync?id=2&name=xiaohua&action=to"
 
 tail -f -n 200 nohup.out
 
@@ -56,17 +59,17 @@ tail -f -n 200 nohup.out
 ### 测试事务消息
 ``` shell
 # 回调提交
-http://127.0.0.1:28082/messageSend/sendTransactional?id=1&name=xiaoming&action=go&ags=1
+wget -q -O- "127.0.0.1:28082/messageSend/sendTransactional?id=1&name=xiaoming&action=go&ags=1"
 
 tail -f -n 200 nohup.out
 
 # 回滚事务消息
-http://127.0.0.1:28082/messageSend/sendTransactional?id=1&name=xiaoming&action=go&ags=2
+wget -q -O- "127.0.0.1:28082/messageSend/sendTransactional?id=1&name=xiaoming&action=go&ags=2"
 
 tail -f -n 200 nohup.out
 
 # 直接提交
-http://127.0.0.1:28082/messageSend/sendTransactional?id=1&name=xiaoming&action=go&ags=3
+wget -q -O- "127.0.0.1:28082/sendTransactional?id=1&name=xiaoming&action=go&ags=3"
 
 tail -f -n 200 nohup.out
 
