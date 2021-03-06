@@ -28,7 +28,7 @@ public class MessageSendController {
 	private RocketMQTemplate rocketMQTemplate;
 
     @Autowired
-	@Qualifier("extRocketMQTemplate")
+	@Qualifier("handsonExtRocketMQTemplate")
 	private ExtRocketMQTemplate extRocketMQTemplate;
 
 	@Value("${topic.sendDataType}")
