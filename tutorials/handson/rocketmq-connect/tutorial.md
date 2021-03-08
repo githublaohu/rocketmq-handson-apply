@@ -69,6 +69,8 @@ wget https://handson-apply.oss-cn-hangzhou.aliyuncs.com/rocketmq/rocketmq-connec
 
 tar -xvJf rocketmq-connect-runtime.tar.xz
 
+cp ./connect.conf  ./conf/
+
 sh   run_worker.sh
 
 ```
