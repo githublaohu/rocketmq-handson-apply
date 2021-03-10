@@ -14,6 +14,7 @@
 	<modules>
 		<module>rocketmq-spring-cloud-stream</module>
     <module>rocketmq-spring</module>
+    <module>rocketmq-connect-data</module>
   </modules>
 	<dependencyManagement>
 		<dependencies>
