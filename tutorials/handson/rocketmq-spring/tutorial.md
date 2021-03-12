@@ -1,7 +1,7 @@
 
 # RocketMQ-Spring
 
-本实验，你将使用基于RocketMQ的spring-cloud-bus，实现基于spring-cloud集群内的远程事件广播通知。
+本实验，你讲学会RocketMQ-Spring使用以及不同API的细节
 
 通过本实验，你将学习：
 * 生产者配置
