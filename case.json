@@ -1,0 +1,25 @@
+{
+    "directory": [
+      {
+        "folderName": "rocketmq-spring-stream",
+        "title": "基于RocketMQ实现spring-cloud-stream"
+      },
+      {
+        "folderName": "rocketmq-spring-bus",
+        "title": "基于RocketMQ实现Spring-cloud-bus"
+      },
+      {
+        "folderName": "rocketmq-spring",
+        "title": "RocketMQ-Spring详解"
+      },
+      {
+        "folderName": "rocketmq-connect",
+        "title": "RocketMQ-connect-runtime搭建"
+      },
+      {
+        "folderName": "rocketmq-connect-es",
+        "title": "Rocket-connect-es搭建与使用"
+      }
+    ],
+    "scenario_root": "tutorials/handson"
+  }
