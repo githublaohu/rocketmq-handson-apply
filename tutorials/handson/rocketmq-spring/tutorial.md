@@ -342,8 +342,8 @@ public class TransactionListenerImpl implements RocketMQLocalTransactionListener
 
 ### 配置
 
-| 配置名 | 作用 | 类型 | 默认值 | 是否必须  | 说明 | 
-| -- | -- | -- | -- | -- | -- | -- | 
+| 配置名 | 作用 | 类型 | 默认值 | 是否必须  | 
+| -- | -- | -- | -- | -- |
 |  nameServer   | 注册服务地址    |  String    | ${rocketmq.name-server:}    |  必须 |
 |  group    |  生产组 | String |  |  必须 |  在同一个进程中不能创建相同组的生产者  |
 |  topic | 主题 | String |  |  必须| -- | -- | -- | 
