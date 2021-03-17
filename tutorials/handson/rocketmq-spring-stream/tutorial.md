@@ -98,7 +98,7 @@ RocketMQ固定前最是： spring.cloud.stream.rocketmq
 
 
 ##### 识别标记
-> 识别标记是配置中最要的，配置里面同样识别为一组。这组数据为一组配置，实例化一个生产者或者消费者。比如识别标记为 topic。注解Output("topic")，Input("topic")，StreamListener("topic")，就会适应对应的能力
+> 识别标记是配置中最要的，配置里面同样识别为一组。这组数据为一组配置，实例化一个生产者或者消费者。比如识别标记为 topic。注解Output("topic")，Input("topic")，StreamListener("topic")，就会适应对应的识别标记
 
 
 #### 核心配置
