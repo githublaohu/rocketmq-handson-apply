@@ -245,7 +245,7 @@ public class MessageSendController {
 4. 声明自定义消费者的全局变量，并使用@Autowired注解
 
 ##### 默认配置与ExtRocketMQTemplateConfiguration注解解读
-| 配置名 | 作用 | 类型 | 默认值 | 是否必须 | 存在配置文件 | 默认配置名 |存在注解 | 说明 |
+| 配置名 | 作用 | 类型 | 默认值 | 是否必须 | 存在配置文件 | 默认配置名 |存在注解 | 
 | -- | -- | -- | -- | -- | -- | -- | -- | -- | 
 |  nameServer   | 注册服务地址    |  String    |     |   是  |  是   | rocketmq.name-server |  是   |
 |  group    |  生产组 | String |  | 是  | 是  | rocketmq.producer.group | 是  | 
