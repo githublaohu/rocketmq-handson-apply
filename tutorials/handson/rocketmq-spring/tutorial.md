@@ -248,17 +248,17 @@ public class MessageSendController {
 | 配置名 | 作用 | 类型 | 默认值 | 是否必须 | 存在配置文件 | 默认配置名 |存在注解 | 说明 |
 | -- | -- | -- | -- | -- | -- | -- | -- | -- | 
 |  nameServer   | 注册服务地址    |  String    |     |   是  |  是   | rocketmq.name-server |  是   |
-|  group    |  生产组 | String |  | 是  | 是  | rocketmq.producer.group | 是  |  在同一个进程中不能创建相同组的生产者  |
-| sendMessageTimeout  | 发送超时  | int   | 3000  |  否 | 是 |  rocketmq.producer.send-message-timeout  | 是 |   |  |   |
-| compressMessageBodyThreshold | 数据压缩限制 | int | 1024*4 | 否 | 是 |  rocketmq.producer.compress-message-body-threshold | -- | -- | 
-| retryTimesWhenSendFailed | 同步发送失败重试次数 | int | 2 | 否 | 是 |rocketmq.producer.retry-times-when-send-failed | 是 | -- | -- | 
-| retryTimesWhenSendAsyncFailed | 异步发送失败重试次数 | int | 2 | 否 | 是 | rocketmq.producer.retry-times-when-send-async-fsailed | -- | -- |  -- | 
-| retryNextServer | 内部发送失败时重试另一个代理 | boolean | false | 否 | 是 | rocketmq.producer.retry-next-server | 是 | -- |  -- |
-| maxMessageSize | 消息最大字节数 | int | 4M | 否 | 是 | rocketmq.producer.max-message-size | 是 | -- |  -- | 
-| enableMsgTrace | 开启消息轨迹 | boolean | true | 否 | 是 | rocketmq.producer.enable-msg-trace | 是 | -- |  -- | 
-| customizedTraceTopic |  消息轨迹topic | String | RMQ_SYS_TRACE_TOPIC | 否 | 是 | rocketmq.producer.customized-trace-topic | 是  | -- | -- |  -- | 
-| accessKey | acl需要的ak | String |  | 否 | 是 |rocketmq.producer.access-key | 是 | -- | -- | 
-| secretKey | acl需要的sk  | String |  | 否 | 是 |rocketmq.producer.secret-key | 是 | -- | -- | 
+|  group    |  生产组 | String |  | 是  | 是  | rocketmq.producer.group | 是  | 
+| sendMessageTimeout  | 发送超时  | int   | 3000  |  否 | 是 |  rocketmq.producer.send-message-timeout  | 是 |   | 
+| compressMessageBodyThreshold | 数据压缩限制 | int | 1024*4 | 否 | 是 |  rocketmq.producer.compress-message-body-threshold |  | 
+| retryTimesWhenSendFailed | 同步发送失败重试次数 | int | 2 | 否 | 是 |rocketmq.producer.retry-times-when-send-failed | 是 |  | 
+| retryTimesWhenSendAsyncFailed | 异步发送失败重试次数 | int | 2 | 否 | 是 | rocketmq.producer.retry-times-when-send-async-fsailed |  |
+| retryNextServer | 内部发送失败时重试另一个代理 | boolean | false | 否 | 是 | rocketmq.producer.retry-next-server | 是 |  |
+| maxMessageSize | 消息最大字节数 | int | 4M | 否 | 是 | rocketmq.producer.max-message-size | 是 |  |  
+| enableMsgTrace | 开启消息轨迹 | boolean | true | 否 | 是 | rocketmq.producer.enable-msg-trace | 是 |  |  
+| customizedTraceTopic |  消息轨迹topic | String | RMQ_SYS_TRACE_TOPIC | 否 | 是 | rocketmq.producer.customized-trace-topic | 是  |  |
+| accessKey | acl需要的ak | String |  | 否 | 是 |rocketmq.producer.access-key | 是 |  | 
+| secretKey | acl需要的sk  | String |  | 否 | 是 |rocketmq.producer.secret-key | 是 |  |
 
 
 ###  消息生产
