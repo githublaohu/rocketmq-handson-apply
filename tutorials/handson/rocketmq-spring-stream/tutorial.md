@@ -90,7 +90,7 @@ tail -f -n 200 nohup.out
 </dependency>
 ```
 #### 配置讲解
-${固定前缀}.${识别标记}.${consumer or producer or null}.#{变量}
+${固定前缀}.${识别标记}.${consumer or producer or null}.${变量}
 ##### 固定标记
 spring固定前缀是：spring.cloud.stream.bindings
 
